@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+  vscode-ws:
+    build: .
+    command: /bin/sh -c "sleep infinity"
+    volumes:
+      - .:/ldod/.ws:cached
+      - ldod-config:/ldod/.config
+      - ldod-linux-repo:/ldod/linux-repo
+      - ldod-uboot-repo:/ldod/uboot-repo
+      - ldod-vscode-server-extensions:/vscode/.vscode-server/extensions
+      - ldod-vscode-server-insiders-extensions:/vscode/.vscode-server-insiders/extensions
+volumes:
+  ldod-config:
+  ldod-linux-repo:
+  ldod-uboot-repo:
+  ldod-vscode-server-extensions:
+  ldod-vscode-server-insiders-extensions:
